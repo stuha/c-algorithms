@@ -9,7 +9,7 @@ Usage
 
 1. Clone `https://github.com/stuha/c-algorithms.git` repo.
 
-2. Execute `cc bubble_sort.c` in `c-algorithms/sorting` and `./bubble_sort`
+2. `cd sorting` and `./comp.sh insertion_sort.c`, then execute `test_insertion_sort`.
 
 Algorithms
 ----------
