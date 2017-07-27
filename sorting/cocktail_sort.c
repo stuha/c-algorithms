@@ -2,25 +2,15 @@
  * Cocktail sort - https://en.wikipedia.org/wiki/Cocktail_sort
  */
 
-#include <stdio.h>
+#include "sorts.h"
 
-#define A_NUM 6
-
-int
-main(void)
+void cocktail_sort(int *arr, int siz)
 {
-        int arr[A_NUM] = {9, 2, 7, 8, 5, 1};
-        int tmp = 0;
-        int i, j, left, right;
+        int right, left, tmp;
 
-        printf("original: ");
-        for (j = 0; j < A_NUM; j++)
-                printf("%d ", arr[j]);
-        printf("\n");
-
-        for (i = 0; i < A_NUM / 2; i++) {
+        for (int i = 0; i < siz / 2; i++) {
                 left = 0;
-                right = A_NUM - 1;
+                right = siz - 1;
 
                 for (; left <= right;) {
                         if (arr[left] > arr[left+1]) {
@@ -38,9 +28,4 @@ main(void)
                         right--;
                 }
         }
-
-        printf("sorted: ");
-        for (j = 0; j < A_NUM; j++)
-                printf("%d ", arr[j]);
-        printf("\n");
 }

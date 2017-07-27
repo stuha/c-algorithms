@@ -2,23 +2,13 @@
  * Comb sort - https://en.wikipedia.org/wiki/Combsort
  */
 
-#include <stdio.h>
+#include "sorts.h"
 
-#define A_NUM 6
-
-int
-main(void)
+void comb_sort(int *arr, int siz)
 {
-        int arr[A_NUM] = {9, 6, 1, 5, 7, 4};
         int tmp = 0;
-        int gap = A_NUM;
+        int gap = siz;
         int i;
-
-        printf("original: ");
-        for (i = 0; i < A_NUM; i++) {
-                printf("%d ", arr[i]);
-        }
-        printf("\n");
 
         for (;;) {
                 if (gap > 1)
@@ -32,7 +22,7 @@ main(void)
                         }
                         i++;
 
-                        if (i + gap >= A_NUM)
+                        if (i + gap >= siz)
                                 break;
                 }
 
@@ -40,10 +30,4 @@ main(void)
                         break;
 
         }
-
-        printf("sorted: ");
-        for (i = 0; i < A_NUM; i++) {
-                printf("%d ", arr[i]);
-        }
-        printf("\n");
 }
