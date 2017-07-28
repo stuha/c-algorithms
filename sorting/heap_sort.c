@@ -8,31 +8,31 @@
 
 #include "sorts.h"
 
-int *sift(int *arr, int i, int siz)
+extern void swap(int *arr, int pos1, int pos2);
+
+void sift(int *arr, int idx, int siz)
 {
-        int done = FALSE;
-        int tmp = 0;
-        int max_child = 0;
+        int min;
 
-        while ((i * 2 + 1) < siz && !done) {
-                if ((i * 2 + 1) == (siz - 1))
-                        max_child = i * 2 + 1;
-                else if (arr[i*2+1] > arr[i+2+2])
-                        max_child = i * 2 + 1;
-                else
-                        max_child = i * 2 + 2;
+        while (idx * 2 + 1 < siz) {
+                min = idx * 2 + 1;
+                if (idx * 2 + 2 < siz)
+                        if (arr[min] < arr[idx * 2 + 2])
+                                min = idx * 2 + 2;
 
-                if (arr[i] < arr[max_child]) {
-                        tmp = arr[i];
-                        arr[i] = arr[max_child];
-                        arr[max_child] = tmp;
-                        i = max_child;
+                if (arr[idx] > arr[min]) {
+                        break;
                 } else {
-                        done = TRUE;
+                        swap(arr, idx, min);
+                        idx = min;
                 }
         }
+}
 
-        return arr;
+void build_heap(int *arr, int siz)
+{
+        for (int i = siz / 2 - 1; i >= 0; i--)
+                sift(arr, i, siz);
 }
 
 void heap_sort(int *arr, int siz)
@@ -40,13 +40,11 @@ void heap_sort(int *arr, int siz)
         int i = 0;
         int tmp = 0;
 
-        for (i = siz / 2 - 1; i >= 0; i--)
-                arr = sift(arr, i, siz);
+        build_heap(arr, siz);
 
         for (i = siz - 1; i >= 1; i--) {
-                tmp = arr[0];
-                arr[0] = arr[i];
-                arr[i] = tmp;
-                arr = sift(arr, 0, i);
+                swap(arr, 0, i);
+                siz--;
+                sift(arr, 0, siz);
         }
 }

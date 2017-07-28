@@ -8,12 +8,12 @@ void gnome_sort(int *arr, int siz)
         int tmp = 0;
 
         while (i < siz) {
-                if (arr[i] >= arr[i-1]) {
+                if (arr[i] >= arr[i - 1]) {
                         i++;
                 } else {
                         tmp = arr[i];
-                        arr[i] = arr[i-1];
-                        arr[i-1] = tmp;
+                        arr[i] = arr[i - 1];
+                        arr[i - 1] = tmp;
 
                         if (i > 1)
                                 i--;

@@ -57,5 +57,5 @@ void sorting(int *arr, int left, int right)
 
 void merge_sort(int *arr, int siz)
 {
-        sorting(arr, 0, siz-1);
+        sorting(arr, 0, siz - 1);
 }

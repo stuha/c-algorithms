@@ -13,7 +13,7 @@ int getK(int *arr, int siz)
 
         k = arr[0];
 
-        for(int i = 0; i < siz; i++) {
+        for (int i = 0; i < siz; i++) {
                 int v = arr[i];
                 if (v > k)
                         k = v;
@@ -35,7 +35,7 @@ void counting_sort(int *arr, int siz)
                 array_of_counts[arr[i]] += 1;
 
         for (i = j = 0; i < k; i++) {
-                while(1) {
+                while (1) {
                         if (array_of_counts[i] > 0) {
                                 arr[j] = i;
                                 j += 1;
