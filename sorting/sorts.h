@@ -18,4 +18,9 @@ void quick_sort(int *, int);
 void selection_sort(int *, int);
 void shell_sort(int *, int);
 
+enum {
+        FALSE,
+        TRUE
+};
+
 #endif

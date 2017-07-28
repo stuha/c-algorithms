@@ -8,11 +8,6 @@
 
 #include "sorts.h"
 
-enum {
-        FALSE,
-        TRUE
-};
-
 int *sift(int *arr, int i, int siz)
 {
         int done = FALSE;
