@@ -13,16 +13,16 @@ void cocktail_sort(int *arr, int siz)
                 right = siz - 1;
 
                 for (; left <= right;) {
-                        if (arr[left] > arr[left+1]) {
+                        if (arr[left] > arr[left + 1]) {
                                 tmp = arr[left];
-                                arr[left] = arr[left+1];
-                                arr[left+1] = tmp;
+                                arr[left] = arr[left + 1];
+                                arr[left + 1] = tmp;
                         }
                         left++;
 
-                        if (arr[right-1] > arr[right]) {
-                                tmp = arr[right-1];
-                                arr[right-1] = arr[right];
+                        if (arr[right - 1] > arr[right]) {
+                                tmp = arr[right - 1];
+                                arr[right - 1] = arr[right];
                                 arr[right] = tmp;
                         }
                         right--;
