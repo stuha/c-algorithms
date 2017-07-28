@@ -9,7 +9,7 @@ Usage
 
 1. Clone `https://github.com/stuha/c-algorithms.git` repo.
 
-2. `cd sorting` and `./comp.sh insertion_sort.c`, then execute `test_insertion_sort`.
+2. `make test` and read code...
 
 Algorithms
 ----------
