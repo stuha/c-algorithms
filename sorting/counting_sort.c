@@ -19,7 +19,7 @@ int getK(int *arr, int siz)
                         k = v;
         }
 
-        return (k + 1);
+        return k + 1;
 }
 
 void counting_sort(int *arr, int siz)

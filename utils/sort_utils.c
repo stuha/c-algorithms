@@ -3,7 +3,7 @@
  * so arguments are int
  */
 
-#include <utils.h>
+#include <sort_utils.h>
 #include <sort_conf.h>
 
 /* free the pointer after using it */
@@ -68,3 +68,13 @@ void sort_test(void (*sort_func)(int *, int))
 {
         sort_test2(sort_func, ARRSIZ, MAXNUM);
 }
+
+void swap(int *arr, int pos1, int pos2)
+{
+        int tmp;
+
+        tmp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = tmp;
+}
+

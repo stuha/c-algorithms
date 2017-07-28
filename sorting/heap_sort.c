@@ -8,8 +8,6 @@
 
 #include "sorts.h"
 
-extern void swap(int *arr, int pos1, int pos2);
-
 void sift(int *arr, int idx, int siz)
 {
         int min;
@@ -38,7 +36,6 @@ void build_heap(int *arr, int siz)
 void heap_sort(int *arr, int siz)
 {
         int i = 0;
-        int tmp = 0;
 
         build_heap(arr, siz);
 

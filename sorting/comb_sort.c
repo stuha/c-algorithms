@@ -6,7 +6,6 @@
 
 void comb_sort(int *arr, int siz)
 {
-        int tmp = 0;
         int gap = siz;
         int i;
 
@@ -15,11 +14,8 @@ void comb_sort(int *arr, int siz)
                         gap = gap * 100 / 124;
 
                 for (i = 0;;) {
-                        if (arr[i] > arr[i + gap]) {
-                                tmp = arr[i];
-                                arr[i] = arr[i + gap];
-                                arr[i + gap] = tmp;
-                        }
+                        if (arr[i] > arr[i + gap])
+                                swap(arr, i, i + gap);
                         i++;
 
                         if (i + gap >= siz)

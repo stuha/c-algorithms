@@ -6,7 +6,6 @@
 
 void odd_even_sort(int *arr, int siz)
 {
-        int tmp = 0;
         int i;
         int is_sorted = FALSE;
 
@@ -14,18 +13,14 @@ void odd_even_sort(int *arr, int siz)
                 is_sorted = TRUE;
                 for (i = 1; i < siz - 1; i = i + 2)
                         if (arr[i] > arr[i + 1]) {
-                                tmp = arr[i];
-                                arr[i] = arr[i + 1];
-                                arr[i + 1] = tmp;
+                                swap(arr, i, i + 1);
 
                                 is_sorted = FALSE;
                         }
 
                 for (i = 0; i < siz - 1; i = i + 2)
                         if (arr[i] > arr[i + 1]) {
-                                tmp = arr[i];
-                                arr[i] = arr[i + 1];
-                                arr[i + 1] = tmp;
+                                swap(arr, i, i + 1);
 
                                 is_sorted = FALSE;
                         }

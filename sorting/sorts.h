@@ -3,7 +3,7 @@
  */
 #ifndef __SORTS_H
 
-#include "utils.h"
+#include "sort_utils.h"
 
 void bubble_sort(int *, int);
 void cocktail_sort(int *, int);
